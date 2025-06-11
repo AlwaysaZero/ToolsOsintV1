@@ -1,5 +1,9 @@
-import json
 import os
+import time
+import requests
+import platform
+
+
 #BASE BY SXPLOIT
 #PENGEMBANG TOOLS MR.N43TXPLOIT
 
@@ -10,6 +14,62 @@ YELLOW = "\033[33m"
 CYAN = "\033[36m"
 GREEN = "\033[32m"
 BLUE = "\033[34m"
+
+# Fungsi untuk ambil IP publik
+def get_public_ip():
+    try:
+        return requests.get("https://api.ipify.org").text
+    except:
+        return "Tidak Diketahui"
+
+# Fungsi untuk ambil informasi device secara otomatis
+def get_device_info():
+    info = platform.uname()
+    return f"{info.system} {info.node} - {info.machine} - {info.processor}"
+
+# Data target (bisa custom)
+nomor_target = "+63716628727"
+pemilik = "Arby-Hex"
+tipe = "Mobile"
+tanggal_registrasi = "2025-05-09"
+expired = "Tidak Ada Informasi"
+ping = "37.9/ms"
+operator = "IM3"
+negara = "Indonesia"
+kota = "DKI Jakarta"
+
+# Fungsi utama
+def terminal_output():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    ip_address = get_public_ip()
+    device_info = get_device_info()
+
+    print("➤ .>")
+    time.sleep(1)
+
+    print("\n\033[91m* DATABASE RAHASIA TERBONGKAR *\033[0m")
+    print("\033[91m========== RESULT ==========\033[0m")
+    print("\033[95m")
+    print(f"Nomor Target        : {nomor_target}")
+    print(f"Pemilik             : {pemilik}")
+    print(f"Type                : {tipe}")
+    print(f"Tanggal Registrasi  : {tanggal_registrasi}")
+    print(f"Expired             : {expired}")
+    print(f"IP Address          : {ip_address}")
+    print(f"Ping                : {ping}")
+    print(f"Jenis Operator      : {operator}")
+    print(f"Negara              : {negara}")
+    print(f"Kota                : {kota}")
+    print(f"Device              : {device_info}")
+    print("\033[0m")
+
+    print("\033[92m\n✔ Data berhasil diproses. Gunakan dengan bijak.\033[0m\n")
+    print("\033[94mroot@localhost:~#\033[0m ", end="")
+
+# Jalankan
+terminal_output()
+
+
 
 def main():
     os.system("clear")
